@@ -48,6 +48,14 @@ class House_rules(AbstactItem):
         verbose_name = "House Rule"
 
 
+class Photo(core_models.TimeStampedModel):
+    caption = models.CharField(max_length=80)
+    file = models.ImageField()
+
+    """ 이렇게도 사용가능 """
+    room = models.ForeignKey("Room", on_delete=models.CASCADE)
+
+
 class Room(core_models.TimeStampedModel):
     """ Room Model Definition """
 
