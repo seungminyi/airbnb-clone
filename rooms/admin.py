@@ -15,7 +15,55 @@ class RoomAdmin(admin.ModelAdmin):
 
     """ Room Admin Definition """
 
-    pass
+    fieldsets = (
+        (
+            "Basic info",
+            {"fields": ("name", "description", "contry", "address", "price")},
+        ),
+        ("Time", {"fields": ("check_in", "check_out", "instant_book")}),
+        ("Spaces", {"fields": ("guests", "beds", "bedrooms", "baths",)}),
+        (
+            "More About Space",
+            {
+                "classes": ("collapse",),
+                "fields": ("amenities", "facilities", "house_rules",),
+            },
+        ),
+        ("Last Detailes", {"fields": ("host",)}),
+    )
+
+    list_display = (
+        "name",
+        "contry",
+        "city",
+        "price",
+        "address",
+        "guests",
+        "beds",
+        "bedrooms",
+        "baths",
+        "check_in",
+        "check_out",
+        "instant_book",
+    )
+
+    list_filter = (
+        "instant_book",
+        "host__superhost",
+        "room_type",
+        "amenities",
+        "facilities",
+        "house_rules",
+        "city",
+        "contry",
+    )
+    search_fields = ("=city", "host__username")
+
+    filter_horizontal = (
+        "amenities",
+        "facilities",
+        "house_rules",
+    )
 
 
 @admin.register(models.Photo)
