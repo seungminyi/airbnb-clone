@@ -3,7 +3,6 @@ from django_seed import Seed
 from django.contrib.admin.utils import flatten
 from rooms import models as room_model
 from users import models as user_model
-
 import random
 
 

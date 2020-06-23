@@ -17,4 +17,4 @@ class Command(BaseCommand):
 
         for f in facilities:
             rooms_model.Facility.objects.create(name=f)
-        self.stdout.write(self.style.SUCCESS("Facilities FakeData Create"))
+        self.stdout.write(self.style.SUCCESS(f"{len(facilities)} Facilities Created"))
