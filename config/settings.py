@@ -38,7 +38,7 @@ DJANGO_APPS = [
     "django.contrib.staticfiles",
 ]
 
-THIRD_PARTY_APPS = ["django_contries"]
+THIRD_PARTY_APPS = ["django_contries", "django_seed"]
 
 PROJECT_APPS = [
     "core.apps.CoreConfig",
