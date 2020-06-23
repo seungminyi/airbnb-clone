@@ -4,7 +4,7 @@ from core import models as core_models
 
 class Review(core_models.TimeStampedModel):
     review = models.TextField()
-    accuracy = models.IntegerField(null=True)
+    accuracy = models.IntegerField()
     communication = models.IntegerField()
     cleanliness = models.IntegerField()
     location = models.IntegerField()
