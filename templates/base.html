@@ -6,6 +6,8 @@
     <title>{% block pagename%}{% endblock pagename%}</title>
   </head>
   <body>
+    {% include "partials/header.html" %}
     {% block content %} {% endblock content%}
+    {% include "partials/footer.html" %}
   </body>
 </html>
